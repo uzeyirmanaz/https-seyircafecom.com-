@@ -1,2 +1,0 @@
-# https-seyircafecom.com-
-MENÜ
