@@ -1,87 +1,11 @@
-F<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
-  <script type="module">
-  // Firebase kütüphanelerini CDN üzerinden doğrudan tarayıcıya çağırıyoruz
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-  import { getFirestore, collection, addDoc, getDocs, updateDoc, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-
-  // Sizin Firebase yapılandırma bilgileriniz
-  const firebaseConfig = {
-    apiKey: "AIzaSyBXFcaVPTEqg4tmpYS0dkDWd9rfgjgFLYE",
-    authDomain: "seyircafeadisyon.firebaseapp.com",
-    projectId: "seyircafeadisyon",
-    storageBucket: "seyircafeadisyon.firebasestorage.app",
-    messagingSenderId: "399155636892",
-    appId: "1:399155636892:web:6190c656d5f9d708ce1b59",
-    measurementId: "G-5YPKK45ZF8"
-  };
-
-  // Firebase'i Başlat
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
-  // Örnek: Adisyon / Sipariş Kaydetme Fonksiyonu
-  window.adisyonKaydet = async function(masaAdi, urunlerListesi, toplamTutar) {
-    try {
-      const docRef = await addDoc(collection(db, "adisyonlar"), {
-        masa: masaAdi,
-        urunler: urunlerListesi,
-        tutar: toplamTutar,
-        durum: "Açık",
-        tarih: new Date().toLocaleString("tr-TR")
-      });
-      console.log("Adisyon başarıyla kaydedildi, ID: ", docRef.id);
-      alert("Sipariş veritabanına kaydedildi!");
-    } catch (e) {
-      console.error("Kayıt hatası: ", e);
-      alert("Kayıt sırasında bir hata oluştu!");
-    }
-  };
-</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0">
 <meta name="build" content="20261006-5">
-<script>
-  <script type="module">
-  // Firebase kütüphanelerini CDN üzerinden doğrudan tarayıcıya çağırıyoruz
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-  import { getFirestore, collection, addDoc, getDocs, updateDoc, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-
-  // Sizin Firebase yapılandırma bilgileriniz
-  const firebaseConfig = {
-    apiKey: "AIzaSyBXFcaVPTEqg4tmpYS0dkDWd9rfgjgFLYE",
-    authDomain: "seyircafeadisyon.firebaseapp.com",
-    projectId: "seyircafeadisyon",
-    storageBucket: "seyircafeadisyon.firebasestorage.app",
-    messagingSenderId: "399155636892",
-    appId: "1:399155636892:web:6190c656d5f9d708ce1b59",
-    measurementId: "G-5YPKK45ZF8"
-  };
-
-  // Firebase'i Başlat
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
-  // Örnek: Adisyon / Sipariş Kaydetme Fonksiyonu
-  window.adisyonKaydet = async function(masaAdi, urunlerListesi, toplamTutar) {
-    try {
-      const docRef = await addDoc(collection(db, "adisyonlar"), {
-        masa: masaAdi,
-        urunler: urunlerListesi,
-        tutar: toplamTutar,
-        durum: "Açık",
-        tarih: new Date().toLocaleString("tr-TR")
-      });
-      console.log("Adisyon başarıyla kaydedildi, ID: ", docRef.id);
-      alert("Sipariş veritabanına kaydedildi!");
-    } catch (e) {
-      console.error("Kayıt hatası: ", e);
-      alert("Kayıt sırasında bir hata oluştu!");
-    }
-  };
-</script>(function(){ if(!/^https?:/.test(location.protocol)) return; try{ const f = new URL(location.href); f.searchParams.set('_t', Date.now());
+<script>(function(){ if(!/^https?:/.test(location.protocol)) return; try{ const f = new URL(location.href); f.searchParams.set('_t', Date.now());
   fetch(f.toString(), { cache: 'no-store' }).then(r => r.text()).then(t => { const m = t.match(/name="build" content="([^"]+)"/), cur = document.querySelector('meta[name=build]').content;
     if(m && m[1] !== cur && sessionStorage.getItem('seyirReload') !== m[1]){ sessionStorage.setItem('seyirReload', m[1]); const u = new URL(location.href); u.searchParams.set('_v', m[1]); location.replace(u.toString()); } }).catch(() => {}); }catch(e){} })();</script>
 <meta name="theme-color" content="#cf2e2e">
